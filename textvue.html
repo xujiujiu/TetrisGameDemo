@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+        <link href="vue.css" type="text/css" rel="stylesheet">
+    </head>
+    <body id="example">
+        <button @click="changeShow"></button>
+        <div v-show="show" :transition="transitionName">hello</div>
+    </body>
+    <script type="text/javascript" src="vue.js"></script>
+    <script>
+//Vue.transition('expand', {
+//   beforeEnter : function(el){
+//       el.textContent = 'beforeEnter'
+//   },
+//    enter : function(el){
+//        el.textContent = 'enter'
+//    },
+//    afterEnter : function(el){
+//        el.textContent = 'afterEnter'
+//    },
+//    enterCancelled : function(el){
+//        el.textContent = 'enterCancelled'
+//    },
+//    beforeLeave : function(el){
+//        el.textContent = 'beforeLeave'
+//    },
+//    leave : function(el){
+//        el.textContent = 'leave'
+//    },
+//    afterLeave : function(el){
+//        el.textContent = 'afterLeave'
+//    },
+//    leaveCancelled : function(el){
+//    }
+//});
+        var a = new Vue({
+            el:'#example',
+            data:{
+                show:true,
+                transitionName:'fade'
+            },
+            method:{
+                changeShow:function(){
+                    this.show = !this.show;
+                }
+            }
+        })
+    </script>
+</html>
